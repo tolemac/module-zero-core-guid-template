@@ -21,12 +21,12 @@
               "src/favicon.ico",
               {
                 "glob": "abp.signalr.js",
-                "input": "node_modules/abp-web-resources/Abp/Framework/scripts/libs",
+                "input": "node_modules/@south-bridge/abp-web-resources/Abp/Framework/scripts/libs",
                 "output": "/assets/abp"
               },
               {
                 "glob": "abp.signalr-client.js",
-                "input": "node_modules/abp-web-resources/Abp/Framework/scripts/libs",
+                "input": "node_modules/@south-bridge/abp-web-resources/Abp/Framework/scripts/libs",
                 "output": "/assets/abp"
               }
             ],
@@ -70,13 +70,13 @@
               "node_modules/flot/jquery.flot.categories.js",
               "node_modules/flot/jquery.flot.time.js",
               "node_modules/jquery-sparkline/jquery.sparkline.min.js",
-              "node_modules/abp-web-resources/Abp/Framework/scripts/abp.js",
-              "node_modules/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js",
-              "node_modules/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js",
-              "node_modules/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js",
-              "node_modules/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js",
-              "node_modules/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js",
-              "node_modules/abp-web-resources/Abp/Framework/scripts/libs/abp.moment.js",
+              "node_modules/@south-bridge/abp-web-resources/Abp/Framework/scripts/abp.js",
+              "node_modules/@south-bridge/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js",
+              "node_modules/@south-bridge/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js",
+              "node_modules/@south-bridge/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js",
+              "node_modules/@south-bridge/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js",
+              "node_modules/@south-bridge/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js",
+              "node_modules/@south-bridge/abp-web-resources/Abp/Framework/scripts/libs/abp.moment.js",
               "src/bsb-theme/js/admin.js",
               "src/bsb-theme/js/demo.js",
               "src/bsb-theme/js/jquery.validate.js"
@@ -162,13 +162,13 @@
               "node_modules/flot/jquery.flot.categories.js",
               "node_modules/flot/jquery.flot.time.js",
               "node_modules/jquery-sparkline/jquery.sparkline.min.js",
-              "node_modules/abp-web-resources/Abp/Framework/scripts/abp.js",
-              "node_modules/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js",
-              "node_modules/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js",
-              "node_modules/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js",
-              "node_modules/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js",
-              "node_modules/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js",
-              "node_modules/abp-web-resources/Abp/Framework/scripts/libs/abp.moment.js",
+              "node_modules/@south-bridge/abp-web-resources/Abp/Framework/scripts/abp.js",
+              "node_modules/@south-bridge/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js",
+              "node_modules/@south-bridge/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js",
+              "node_modules/@south-bridge/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js",
+              "node_modules/@south-bridge/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js",
+              "node_modules/@south-bridge/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js",
+              "node_modules/@south-bridge/abp-web-resources/Abp/Framework/scripts/libs/abp.moment.js",
               "src/bsb-theme/js/admin.js",
               "src/bsb-theme/js/demo.js",
               "src/bsb-theme/js/jquery.validate.js"
@@ -191,12 +191,12 @@
               "src/favicon.ico",
               {
                 "glob": "abp.signalr.js",
-                "input": "node_modules/abp-web-resources/Abp/Framework/scripts/libs",
+                "input": "node_modules/@south-bridge/abp-web-resources/Abp/Framework/scripts/libs",
                 "output": "/assets/abp"
               },
               {
                 "glob": "abp.signalr-client.js",
-                "input": "node_modules/abp-web-resources/Abp/Framework/scripts/libs",
+                "input": "node_modules/@south-bridge/abp-web-resources/Abp/Framework/scripts/libs",
                 "output": "/assets/abp"
               }
             ]

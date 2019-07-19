@@ -90,9 +90,9 @@ export class RolesComponent extends PagedListingComponentBase<RoleDto> {
         this.showCreateOrEditRoleDialog(role.id);
     }
 
-    showCreateOrEditRoleDialog(id?: number): void {
+    showCreateOrEditRoleDialog(id?: string): void {
         let createOrEditRoleDialog;
-        if (id === undefined || id <= 0) {
+        if (id === undefined || id === '' || id === null) {
             createOrEditRoleDialog = this._dialog.open(CreateRoleDialogComponent);
         } else {
             createOrEditRoleDialog = this._dialog.open(EditRoleDialogComponent, {

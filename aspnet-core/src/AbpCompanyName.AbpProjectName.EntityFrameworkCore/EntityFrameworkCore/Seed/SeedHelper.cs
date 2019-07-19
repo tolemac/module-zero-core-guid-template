@@ -26,7 +26,7 @@ namespace AbpCompanyName.AbpProjectName.EntityFrameworkCore.Seed
 
             // Default tenant seed (in host database).
             new DefaultTenantBuilder(context).Create();
-            new TenantRoleAndUserBuilder(context, 1).Create();
+            new TenantRoleAndUserBuilder(context, AbpTenantBase.DefaultTenantId).Create();
         }
 
         private static void WithDbContext<TDbContext>(IIocResolver iocResolver, Action<TDbContext> contextAction)

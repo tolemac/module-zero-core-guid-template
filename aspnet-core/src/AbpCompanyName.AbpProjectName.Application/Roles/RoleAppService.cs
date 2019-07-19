@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Abp.Application.Services;
@@ -18,7 +19,7 @@ using Microsoft.EntityFrameworkCore;
 namespace AbpCompanyName.AbpProjectName.Roles
 {
     [AbpAuthorize(PermissionNames.Pages_Roles)]
-    public class RoleAppService : AsyncCrudAppService<Role, RoleDto, int, PagedRoleResultRequestDto, CreateRoleDto, RoleDto>, IRoleAppService
+    public class RoleAppService : AsyncCrudAppService<Role, RoleDto, Guid, PagedRoleResultRequestDto, CreateRoleDto, RoleDto>, IRoleAppService
     {
         private readonly RoleManager _roleManager;
         private readonly UserManager _userManager;
@@ -82,7 +83,7 @@ namespace AbpCompanyName.AbpProjectName.Roles
             return MapToEntityDto(role);
         }
 
-        public override async Task Delete(EntityDto<int> input)
+        public override async Task Delete(EntityDto<Guid> input)
         {
             CheckDeletePermission();
 
@@ -114,7 +115,7 @@ namespace AbpCompanyName.AbpProjectName.Roles
                 || x.Description.Contains(input.Keyword));
         }
 
-        protected override async Task<Role> GetEntityByIdAsync(int id)
+        protected override async Task<Role> GetEntityByIdAsync(Guid id)
         {
             return await Repository.GetAllIncluding(x => x.Permissions).FirstOrDefaultAsync(x => x.Id == id);
         }

@@ -444,8 +444,8 @@ namespace AbpCompanyName.AbpProjectName.Web.Controllers
                 message = "This is a test notification, created at " + Clock.Now;
             }
 
-            var defaultTenantAdmin = new UserIdentifier(1, 2);
-            var hostAdmin = new UserIdentifier(null, 1);
+            var defaultTenantAdmin = new UserIdentifier(GuidExtensions.Guid1, GuidExtensions.Guid2);
+            var hostAdmin = new UserIdentifier(null, GuidExtensions.Guid1);
 
             await _notificationPublisher.PublishAsync(
                     "App.SimpleMessage",

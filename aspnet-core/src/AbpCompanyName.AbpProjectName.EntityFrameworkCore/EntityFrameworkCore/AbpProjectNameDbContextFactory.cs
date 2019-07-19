@@ -14,9 +14,11 @@ namespace AbpCompanyName.AbpProjectName.EntityFrameworkCore
             var builder = new DbContextOptionsBuilder<AbpProjectNameDbContext>();
             var configuration = AppConfigurations.Get(WebContentDirectoryFinder.CalculateContentRootFolder());
 
-            AbpProjectNameDbContextConfigurer.Configure(builder, configuration.GetConnectionString(AbpProjectNameConsts.ConnectionStringName));
+            //AbpProjectNameDbContextConfigurer.Configure(builder, configuration.GetConnectionString(AbpProjectNameConsts.ConnectionStringName));
+            AbpProjectNameDbContextConfigurer.Configure(builder, "Server=(localdb)\\MSSQLLocalDB;Database=AbpGuidTemplateDb;Trusted_Connection=True;");
 
             return new AbpProjectNameDbContext(builder.Options);
+
         }
     }
 }

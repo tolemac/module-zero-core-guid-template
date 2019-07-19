@@ -4,6 +4,7 @@ using Abp.Configuration;
 using Abp.Localization;
 using Abp.MultiTenancy;
 using Abp.Net.Mail;
+using System;
 
 namespace AbpCompanyName.AbpProjectName.EntityFrameworkCore.Seed.Host
 {
@@ -18,7 +19,7 @@ namespace AbpCompanyName.AbpProjectName.EntityFrameworkCore.Seed.Host
 
         public void Create()
         {
-            int? tenantId = null;
+            Guid? tenantId = null;
 
             if (AbpProjectNameConsts.MultiTenancyEnabled == false)
             {
@@ -33,7 +34,7 @@ namespace AbpCompanyName.AbpProjectName.EntityFrameworkCore.Seed.Host
             AddSettingIfNotExists(LocalizationSettingNames.DefaultLanguage, "en", tenantId);
         }
 
-        private void AddSettingIfNotExists(string name, string value, int? tenantId = null)
+        private void AddSettingIfNotExists(string name, string value, Guid? tenantId = null)
         {
             if (_context.Settings.IgnoreQueryFilters().Any(s => s.Name == name && s.TenantId == tenantId && s.UserId == null))
             {

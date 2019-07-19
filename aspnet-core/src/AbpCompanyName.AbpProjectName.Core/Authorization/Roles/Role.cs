@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using Abp.Authorization.Roles;
 using AbpCompanyName.AbpProjectName.Authorization.Users;
 
@@ -12,12 +13,12 @@ namespace AbpCompanyName.AbpProjectName.Authorization.Roles
         {
         }
 
-        public Role(int? tenantId, string displayName)
+        public Role(Guid? tenantId, string displayName)
             : base(tenantId, displayName)
         {
         }
 
-        public Role(int? tenantId, string name, string displayName)
+        public Role(Guid? tenantId, string name, string displayName)
             : base(tenantId, name, displayName)
         {
         }

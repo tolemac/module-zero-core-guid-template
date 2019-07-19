@@ -28,16 +28,16 @@ export class AppSessionService {
         return this._user;
     }
 
-    get userId(): number {
-        return this.user ? this.user.id : null;
+    get userId(): string {
+        return this.user ? this.user.id.toString() : null;
     }
 
     get tenant(): TenantLoginInfoDto {
         return this._tenant;
     }
 
-    get tenantId(): number {
-        return this.tenant ? this.tenant.id : null;
+    get tenantId(): string {
+        return this.tenant ? this.tenant.id.toString() : null;
     }
 
     getShownLoginName(): string {
@@ -63,7 +63,7 @@ export class AppSessionService {
         });
     }
 
-    changeTenantIfNeeded(tenantId?: number): boolean {
+    changeTenantIfNeeded(tenantId?: string): boolean {
         if (this.isCurrentTenant(tenantId)) {
             return false;
         }
@@ -73,7 +73,7 @@ export class AppSessionService {
         return true;
     }
 
-    private isCurrentTenant(tenantId?: number) {
+    private isCurrentTenant(tenantId?: string) {
         if (!tenantId && this.tenant) {
             return false;
         } else if (tenantId && (!this.tenant || this.tenant.id !== tenantId)) {

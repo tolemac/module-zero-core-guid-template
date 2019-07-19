@@ -24,8 +24,8 @@ namespace AbpCompanyName.AbpProjectName.Authorization.Roles
             ICacheManager cacheManager,
             IUnitOfWorkManager unitOfWorkManager,
             IRoleManagementConfig roleManagementConfig,
-            IRepository<OrganizationUnit, long> organizationUnitRepository,
-            IRepository<OrganizationUnitRole, long> organizationUnitRoleRepository)
+            IRepository<OrganizationUnit> organizationUnitRepository,
+            IRepository<OrganizationUnitRole> organizationUnitRoleRepository)
             : base(
                   store,
                   roleValidators,

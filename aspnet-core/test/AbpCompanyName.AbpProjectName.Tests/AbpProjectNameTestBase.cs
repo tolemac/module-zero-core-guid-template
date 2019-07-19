@@ -14,6 +14,7 @@ using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
 using AbpCompanyName.AbpProjectName.EntityFrameworkCore.Seed.Host;
 using AbpCompanyName.AbpProjectName.EntityFrameworkCore.Seed.Tenants;
 using AbpCompanyName.AbpProjectName.MultiTenancy;
+using Abp.Extensions;
 
 namespace AbpCompanyName.AbpProjectName.Tests
 {
@@ -38,11 +39,11 @@ namespace AbpCompanyName.AbpProjectName.Tests
             });
 
             // Seed initial data for default tenant
-            AbpSession.TenantId = 1;
+            AbpSession.TenantId = GuidExtensions.Guid1;
             UsingDbContext(context =>
             {
                 NormalizeDbContext(context);
-                new TenantRoleAndUserBuilder(context, 1).Create();
+                new TenantRoleAndUserBuilder(context, GuidExtensions.Guid1).Create();
             });
 
             LoginAsDefaultTenantAdmin();
@@ -50,7 +51,7 @@ namespace AbpCompanyName.AbpProjectName.Tests
 
         #region UsingDbContext
 
-        protected IDisposable UsingTenantId(int? tenantId)
+        protected IDisposable UsingTenantId(Guid? tenantId)
         {
             var previousTenantId = AbpSession.TenantId;
             AbpSession.TenantId = tenantId;
@@ -77,7 +78,7 @@ namespace AbpCompanyName.AbpProjectName.Tests
             return UsingDbContextAsync(AbpSession.TenantId, func);
         }
 
-        protected void UsingDbContext(int? tenantId, Action<AbpProjectNameDbContext> action)
+        protected void UsingDbContext(Guid? tenantId, Action<AbpProjectNameDbContext> action)
         {
             using (UsingTenantId(tenantId))
             {
@@ -89,7 +90,7 @@ namespace AbpCompanyName.AbpProjectName.Tests
             }
         }
 
-        protected async Task UsingDbContextAsync(int? tenantId, Func<AbpProjectNameDbContext, Task> action)
+        protected async Task UsingDbContextAsync(Guid? tenantId, Func<AbpProjectNameDbContext, Task> action)
         {
             using (UsingTenantId(tenantId))
             {
@@ -101,7 +102,7 @@ namespace AbpCompanyName.AbpProjectName.Tests
             }
         }
 
-        protected T UsingDbContext<T>(int? tenantId, Func<AbpProjectNameDbContext, T> func)
+        protected T UsingDbContext<T>(Guid? tenantId, Func<AbpProjectNameDbContext, T> func)
         {
             T result;
 
@@ -117,7 +118,7 @@ namespace AbpCompanyName.AbpProjectName.Tests
             return result;
         }
 
-        protected async Task<T> UsingDbContextAsync<T>(int? tenantId, Func<AbpProjectNameDbContext, Task<T>> func)
+        protected async Task<T> UsingDbContextAsync<T>(Guid? tenantId, Func<AbpProjectNameDbContext, Task<T>> func)
         {
             T result;
 

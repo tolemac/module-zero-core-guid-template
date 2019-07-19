@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -25,7 +26,7 @@ using Microsoft.EntityFrameworkCore;
 namespace AbpCompanyName.AbpProjectName.Users
 {
     [AbpAuthorize(PermissionNames.Pages_Users)]
-    public class UserAppService : AsyncCrudAppService<User, UserDto, long, PagedUserResultRequestDto, CreateUserDto, UserDto>, IUserAppService
+    public class UserAppService : AsyncCrudAppService<User, UserDto, Guid, PagedUserResultRequestDto, CreateUserDto, UserDto>, IUserAppService
     {
         private readonly UserManager _userManager;
         private readonly RoleManager _roleManager;
@@ -35,7 +36,7 @@ namespace AbpCompanyName.AbpProjectName.Users
         private readonly LogInManager _logInManager;
 
         public UserAppService(
-            IRepository<User, long> repository,
+            IRepository<User> repository,
             UserManager userManager,
             RoleManager roleManager,
             IRepository<Role> roleRepository,
@@ -93,7 +94,7 @@ namespace AbpCompanyName.AbpProjectName.Users
             return await Get(input);
         }
 
-        public override async Task Delete(EntityDto<long> input)
+        public override async Task Delete(EntityDto<Guid> input)
         {
             var user = await _userManager.GetUserByIdAsync(input.Id);
             await _userManager.DeleteAsync(user);
@@ -142,7 +143,7 @@ namespace AbpCompanyName.AbpProjectName.Users
                 .WhereIf(input.IsActive.HasValue, x => x.IsActive == input.IsActive);
         }
 
-        protected override async Task<User> GetEntityByIdAsync(long id)
+        protected override async Task<User> GetEntityByIdAsync(Guid id)
         {
             var user = await Repository.GetAllIncluding(x => x.Roles).FirstOrDefaultAsync(x => x.Id == id);
 
@@ -170,7 +171,7 @@ namespace AbpCompanyName.AbpProjectName.Users
             {
                 throw new UserFriendlyException("Please log in before attemping to change password.");
             }
-            long userId = _abpSession.UserId.Value;
+            var userId = _abpSession.UserId.Value;
             var user = await _userManager.GetUserByIdAsync(userId);
             var loginAsync = await _logInManager.LoginAsync(user.UserName, input.CurrentPassword, shouldLockout: false);
             if (loginAsync.Result != AbpLoginResultType.Success)
@@ -192,7 +193,7 @@ namespace AbpCompanyName.AbpProjectName.Users
             {
                 throw new UserFriendlyException("Please log in before attemping to reset password.");
             }
-            long currentUserId = _abpSession.UserId.Value;
+            var currentUserId = _abpSession.UserId.Value;
             var currentUser = await _userManager.GetUserByIdAsync(currentUserId);
             var loginAsync = await _logInManager.LoginAsync(currentUser.UserName, input.AdminPassword, shouldLockout: false);
             if (loginAsync.Result != AbpLoginResultType.Success)

@@ -29,7 +29,7 @@ export class EditTenantDialogComponent extends AppComponentBase
     injector: Injector,
     public _tenantService: TenantServiceProxy,
     private _dialogRef: MatDialogRef<EditTenantDialogComponent>,
-    @Optional() @Inject(MAT_DIALOG_DATA) private _id: number
+    @Optional() @Inject(MAT_DIALOG_DATA) private _id: string
   ) {
     super(injector);
   }

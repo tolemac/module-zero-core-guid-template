@@ -7,6 +7,7 @@ using AbpCompanyName.AbpProjectName.Controllers;
 using AbpCompanyName.AbpProjectName.Roles;
 using AbpCompanyName.AbpProjectName.Roles.Dto;
 using AbpCompanyName.AbpProjectName.Web.Models.Roles;
+using System;
 
 namespace AbpCompanyName.AbpProjectName.Web.Controllers
 {
@@ -33,7 +34,7 @@ namespace AbpCompanyName.AbpProjectName.Web.Controllers
             return View(model);
         }
 
-        public async Task<ActionResult> EditRoleModal(int roleId)
+        public async Task<ActionResult> EditRoleModal(Guid roleId)
         {
             var output = await _roleAppService.GetRoleForEdit(new EntityDto(roleId));
             var model = new EditRoleModalViewModel(output);

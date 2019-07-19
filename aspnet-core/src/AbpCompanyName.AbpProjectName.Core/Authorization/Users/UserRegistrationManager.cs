@@ -88,7 +88,7 @@ namespace AbpCompanyName.AbpProjectName.Authorization.Users
             return await GetActiveTenantAsync(AbpSession.TenantId.Value);
         }
 
-        private async Task<Tenant> GetActiveTenantAsync(int tenantId)
+        private async Task<Tenant> GetActiveTenantAsync(Guid tenantId)
         {
             var tenant = await _tenantManager.FindByIdAsync(tenantId);
             if (tenant == null)

@@ -12,9 +12,9 @@ namespace AbpCompanyName.AbpProjectName.Features
     {
         public FeatureValueStore(
             ICacheManager cacheManager, 
-            IRepository<TenantFeatureSetting, long> tenantFeatureRepository, 
+            IRepository<TenantFeatureSetting> tenantFeatureRepository, 
             IRepository<Tenant> tenantRepository, 
-            IRepository<EditionFeatureSetting, long> editionFeatureRepository, 
+            IRepository<EditionFeatureSetting> editionFeatureRepository, 
             IFeatureManager featureManager, 
             IUnitOfWorkManager unitOfWorkManager) 
             : base(

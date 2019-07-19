@@ -1,5 +1,6 @@
 ﻿using Abp.MultiTenancy;
 using AbpCompanyName.AbpProjectName.Authorization.Users;
+using System;
 
 namespace AbpCompanyName.AbpProjectName.MultiTenancy
 {
@@ -9,8 +10,8 @@ namespace AbpCompanyName.AbpProjectName.MultiTenancy
         {            
         }
 
-        public Tenant(string tenancyName, string name)
-            : base(tenancyName, name)
+        public Tenant(Guid tenantId, string tenancyName, string name)
+            : base(tenantId, tenancyName, name)
         {
         }
     }

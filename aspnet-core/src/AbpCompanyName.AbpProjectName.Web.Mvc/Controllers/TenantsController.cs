@@ -6,6 +6,7 @@ using AbpCompanyName.AbpProjectName.Authorization;
 using AbpCompanyName.AbpProjectName.Controllers;
 using AbpCompanyName.AbpProjectName.MultiTenancy;
 using AbpCompanyName.AbpProjectName.MultiTenancy.Dto;
+using System;
 
 namespace AbpCompanyName.AbpProjectName.Web.Controllers
 {
@@ -25,7 +26,7 @@ namespace AbpCompanyName.AbpProjectName.Web.Controllers
             return View(output);
         }
 
-        public async Task<ActionResult> EditTenantModal(int tenantId)
+        public async Task<ActionResult> EditTenantModal(Guid tenantId)
         {
             var tenantDto = await _tenantAppService.Get(new EntityDto(tenantId));
             return View("_EditTenantModal", tenantDto);

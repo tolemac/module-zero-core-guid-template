@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Abp.Application.Editions;
 using Abp.Application.Features;
 using AbpCompanyName.AbpProjectName.Editions;
+using System;
 
 namespace AbpCompanyName.AbpProjectName.EntityFrameworkCore.Seed.Host
 {
@@ -33,7 +34,7 @@ namespace AbpCompanyName.AbpProjectName.EntityFrameworkCore.Seed.Host
             }
         }
 
-        private void CreateFeatureIfNotExists(int editionId, string featureName, bool isEnabled)
+        private void CreateFeatureIfNotExists(Guid editionId, string featureName, bool isEnabled)
         {
             if (_context.EditionFeatureSettings.IgnoreQueryFilters().Any(ef => ef.EditionId == editionId && ef.Name == featureName))
             {

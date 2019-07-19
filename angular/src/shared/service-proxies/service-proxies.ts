@@ -384,7 +384,7 @@ export class RoleServiceProxy {
      * @param id (optional) 
      * @return Success
      */
-    delete(id: number | null | undefined): Observable<void> {
+    delete(id: string | null | undefined): Observable<void> {
         let url_ = this.baseUrl + "/api/services/app/Role/Delete?";
         if (id !== undefined)
             url_ += "Id=" + encodeURIComponent("" + id) + "&"; 
@@ -485,7 +485,7 @@ export class RoleServiceProxy {
      * @param id (optional) 
      * @return Success
      */
-    getRoleForEdit(id: number | null | undefined): Observable<GetRoleForEditOutput> {
+    getRoleForEdit(id: string | null | undefined): Observable<GetRoleForEditOutput> {
         let url_ = this.baseUrl + "/api/services/app/Role/GetRoleForEdit?";
         if (id !== undefined)
             url_ += "Id=" + encodeURIComponent("" + id) + "&"; 
@@ -539,7 +539,7 @@ export class RoleServiceProxy {
      * @param id (optional) 
      * @return Success
      */
-    get(id: number | null | undefined): Observable<RoleDto> {
+    get(id: string | null | undefined): Observable<RoleDto> {
         let url_ = this.baseUrl + "/api/services/app/Role/Get?";
         if (id !== undefined)
             url_ += "Id=" + encodeURIComponent("" + id) + "&"; 
@@ -784,7 +784,7 @@ export class TenantServiceProxy {
      * @param id (optional) 
      * @return Success
      */
-    delete(id: number | null | undefined): Observable<void> {
+    delete(id: string | null | undefined): Observable<void> {
         let url_ = this.baseUrl + "/api/services/app/Tenant/Delete?";
         if (id !== undefined)
             url_ += "Id=" + encodeURIComponent("" + id) + "&"; 
@@ -834,7 +834,7 @@ export class TenantServiceProxy {
      * @param id (optional) 
      * @return Success
      */
-    get(id: number | null | undefined): Observable<TenantDto> {
+    get(id: string | null | undefined): Observable<TenantDto> {
         let url_ = this.baseUrl + "/api/services/app/Tenant/Get?";
         if (id !== undefined)
             url_ += "Id=" + encodeURIComponent("" + id) + "&"; 
@@ -1310,7 +1310,7 @@ export class UserServiceProxy {
      * @param id (optional) 
      * @return Success
      */
-    delete(id: number | null | undefined): Observable<void> {
+    delete(id: string | null | undefined): Observable<void> {
         let url_ = this.baseUrl + "/api/services/app/User/Delete?";
         if (id !== undefined)
             url_ += "Id=" + encodeURIComponent("" + id) + "&"; 
@@ -1575,7 +1575,7 @@ export class UserServiceProxy {
      * @param id (optional) 
      * @return Success
      */
-    get(id: number | null | undefined): Observable<UserDto> {
+    get(id: string | null | undefined): Observable<UserDto> {
         let url_ = this.baseUrl + "/api/services/app/User/Get?";
         if (id !== undefined)
             url_ += "Id=" + encodeURIComponent("" + id) + "&"; 
@@ -1734,7 +1734,7 @@ export interface IIsTenantAvailableInput {
 
 export class IsTenantAvailableOutput implements IIsTenantAvailableOutput {
     state: IsTenantAvailableOutputState | undefined;
-    tenantId: number | undefined;
+    tenantId: string | undefined;
 
     constructor(data?: IIsTenantAvailableOutput) {
         if (data) {
@@ -1776,7 +1776,7 @@ export class IsTenantAvailableOutput implements IIsTenantAvailableOutput {
 
 export interface IIsTenantAvailableOutput {
     state: IsTenantAvailableOutputState | undefined;
-    tenantId: number | undefined;
+    tenantId: string | undefined;
 }
 
 export class RegisterInput implements IRegisterInput {
@@ -2001,7 +2001,7 @@ export class RoleDto implements IRoleDto {
     normalizedName: string | undefined;
     description: string | undefined;
     grantedPermissions: string[] | undefined;
-    id: number | undefined;
+    id: string | undefined;
 
     constructor(data?: IRoleDto) {
         if (data) {
@@ -2063,7 +2063,7 @@ export interface IRoleDto {
     normalizedName: string | undefined;
     description: string | undefined;
     grantedPermissions: string[] | undefined;
-    id: number | undefined;
+    id: string | undefined;
 }
 
 export class ListResultDtoOfRoleListDto implements IListResultDtoOfRoleListDto {
@@ -2123,7 +2123,7 @@ export class RoleListDto implements IRoleListDto {
     isStatic: boolean | undefined;
     isDefault: boolean | undefined;
     creationTime: moment.Moment | undefined;
-    id: number | undefined;
+    id: string | undefined;
 
     constructor(data?: IRoleListDto) {
         if (data) {
@@ -2177,7 +2177,7 @@ export interface IRoleListDto {
     isStatic: boolean | undefined;
     isDefault: boolean | undefined;
     creationTime: moment.Moment | undefined;
-    id: number | undefined;
+    id: string | undefined;
 }
 
 export class ListResultDtoOfPermissionDto implements IListResultDtoOfPermissionDto {
@@ -2694,7 +2694,7 @@ export interface IUserLoginInfoDto {
 export class TenantLoginInfoDto implements ITenantLoginInfoDto {
     tenancyName: string | undefined;
     name: string | undefined;
-    id: number | undefined;
+    id: string | undefined;
 
     constructor(data?: ITenantLoginInfoDto) {
         if (data) {
@@ -2739,7 +2739,7 @@ export class TenantLoginInfoDto implements ITenantLoginInfoDto {
 export interface ITenantLoginInfoDto {
     tenancyName: string | undefined;
     name: string | undefined;
-    id: number | undefined;
+    id: string | undefined;
 }
 
 export class CreateTenantDto implements ICreateTenantDto {
@@ -2805,7 +2805,7 @@ export class TenantDto implements ITenantDto {
     tenancyName: string;
     name: string;
     isActive: boolean | undefined;
-    id: number | undefined;
+    id: string | undefined;
 
     constructor(data?: ITenantDto) {
         if (data) {
@@ -2853,7 +2853,7 @@ export interface ITenantDto {
     tenancyName: string;
     name: string;
     isActive: boolean | undefined;
-    id: number | undefined;
+    id: string | undefined;
 }
 
 export class PagedResultDtoOfTenantDto implements IPagedResultDtoOfTenantDto {
@@ -2966,7 +2966,7 @@ export class AuthenticateResultModel implements IAuthenticateResultModel {
     accessToken: string | undefined;
     encryptedAccessToken: string | undefined;
     expireInSeconds: number | undefined;
-    userId: number | undefined;
+    userId: string | undefined;
 
     constructor(data?: IAuthenticateResultModel) {
         if (data) {
@@ -3014,7 +3014,7 @@ export interface IAuthenticateResultModel {
     accessToken: string | undefined;
     encryptedAccessToken: string | undefined;
     expireInSeconds: number | undefined;
-    userId: number | undefined;
+    userId: string | undefined;
 }
 
 export class ExternalLoginProviderInfoModel implements IExternalLoginProviderInfoModel {
@@ -3255,7 +3255,7 @@ export class UserDto implements IUserDto {
     lastLoginTime: moment.Moment | undefined;
     creationTime: moment.Moment | undefined;
     roleNames: string[] | undefined;
-    id: number | undefined;
+    id: string | undefined;
 
     constructor(data?: IUserDto) {
         if (data) {
@@ -3329,7 +3329,7 @@ export interface IUserDto {
     lastLoginTime: moment.Moment | undefined;
     creationTime: moment.Moment | undefined;
     roleNames: string[] | undefined;
-    id: number | undefined;
+    id: string | undefined;
 }
 
 export class ListResultDtoOfRoleDto implements IListResultDtoOfRoleDto {
@@ -3475,7 +3475,7 @@ export interface IChangePasswordDto {
 
 export class ResetPasswordDto implements IResetPasswordDto {
     adminPassword: string;
-    userId: number;
+    userId: string;
     newPassword: string;
 
     constructor(data?: IResetPasswordDto) {
@@ -3520,7 +3520,7 @@ export class ResetPasswordDto implements IResetPasswordDto {
 
 export interface IResetPasswordDto {
     adminPassword: string;
-    userId: number;
+    userId: string;
     newPassword: string;
 }
 

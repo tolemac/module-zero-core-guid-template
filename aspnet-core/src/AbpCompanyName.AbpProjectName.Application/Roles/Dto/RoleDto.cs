@@ -7,7 +7,7 @@ using AbpCompanyName.AbpProjectName.Authorization.Roles;
 
 namespace AbpCompanyName.AbpProjectName.Roles.Dto
 {
-    public class RoleDto : EntityDto<int>
+    public class RoleDto : EntityDto
     {
         [Required]
         [StringLength(AbpRoleBase.MaxNameLength)]

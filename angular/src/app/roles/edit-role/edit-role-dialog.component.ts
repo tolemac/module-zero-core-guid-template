@@ -39,7 +39,7 @@ export class EditRoleDialogComponent extends AppComponentBase
     injector: Injector,
     private _roleService: RoleServiceProxy,
     private _dialogRef: MatDialogRef<EditRoleDialogComponent>,
-    @Optional() @Inject(MAT_DIALOG_DATA) private _id: number
+    @Optional() @Inject(MAT_DIALOG_DATA) private _id: string
   ) {
     super(injector);
   }

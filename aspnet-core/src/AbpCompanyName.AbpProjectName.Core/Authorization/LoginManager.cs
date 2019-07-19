@@ -21,7 +21,7 @@ namespace AbpCompanyName.AbpProjectName.Authorization
             IRepository<Tenant> tenantRepository,
             IUnitOfWorkManager unitOfWorkManager,
             ISettingManager settingManager, 
-            IRepository<UserLoginAttempt, long> userLoginAttemptRepository, 
+            IRepository<UserLoginAttempt> userLoginAttemptRepository, 
             IUserManagementConfig userManagementConfig,
             IIocResolver iocResolver,
             IPasswordHasher<User> passwordHasher, 

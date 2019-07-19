@@ -92,9 +92,9 @@ export class TenantsComponent extends PagedListingComponentBase<TenantDto> {
         this.showCreateOrEditTenantDialog(tenant.id);
     }
 
-    showCreateOrEditTenantDialog(id?: number): void {
+    showCreateOrEditTenantDialog(id?: string): void {
         let createOrEditTenantDialog;
-        if (id === undefined || id <= 0) {
+        if (id === undefined || id === '' || id === null) {
             createOrEditTenantDialog = this._dialog.open(CreateTenantDialogComponent);
         } else {
             createOrEditTenantDialog = this._dialog.open(EditTenantDialogComponent, {

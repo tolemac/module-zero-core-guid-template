@@ -21,15 +21,14 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
             modelBuilder.Entity("Abp.Application.Editions.Edition", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreationTime");
 
-                    b.Property<long?>("CreatorUserId");
+                    b.Property<Guid?>("CreatorUserId");
 
-                    b.Property<long?>("DeleterUserId");
+                    b.Property<Guid?>("DeleterUserId");
 
                     b.Property<DateTime?>("DeletionTime");
 
@@ -41,7 +40,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
                     b.Property<DateTime?>("LastModificationTime");
 
-                    b.Property<long?>("LastModifierUserId");
+                    b.Property<Guid?>("LastModifierUserId");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -54,13 +53,12 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
             modelBuilder.Entity("Abp.Application.Features.FeatureSetting", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreationTime");
 
-                    b.Property<long?>("CreatorUserId");
+                    b.Property<Guid?>("CreatorUserId");
 
                     b.Property<string>("Discriminator")
                         .IsRequired();
@@ -69,7 +67,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                         .IsRequired()
                         .HasMaxLength(128);
 
-                    b.Property<int?>("TenantId");
+                    b.Property<Guid?>("TenantId");
 
                     b.Property<string>("Value")
                         .IsRequired()
@@ -84,9 +82,8 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
             modelBuilder.Entity("Abp.Auditing.AuditLog", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("BrowserInfo")
                         .HasMaxLength(512);
@@ -107,9 +104,9 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
                     b.Property<DateTime>("ExecutionTime");
 
-                    b.Property<int?>("ImpersonatorTenantId");
+                    b.Property<Guid?>("ImpersonatorTenantId");
 
-                    b.Property<long?>("ImpersonatorUserId");
+                    b.Property<Guid?>("ImpersonatorUserId");
 
                     b.Property<string>("MethodName")
                         .HasMaxLength(256);
@@ -122,9 +119,9 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                     b.Property<string>("ServiceName")
                         .HasMaxLength(256);
 
-                    b.Property<int?>("TenantId");
+                    b.Property<Guid?>("TenantId");
 
-                    b.Property<long?>("UserId");
+                    b.Property<Guid?>("UserId");
 
                     b.HasKey("Id");
 
@@ -139,13 +136,12 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
             modelBuilder.Entity("Abp.Authorization.PermissionSetting", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreationTime");
 
-                    b.Property<long?>("CreatorUserId");
+                    b.Property<Guid?>("CreatorUserId");
 
                     b.Property<string>("Discriminator")
                         .IsRequired();
@@ -156,7 +152,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                         .IsRequired()
                         .HasMaxLength(128);
 
-                    b.Property<int?>("TenantId");
+                    b.Property<Guid?>("TenantId");
 
                     b.HasKey("Id");
 
@@ -169,9 +165,8 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
             modelBuilder.Entity("Abp.Authorization.Roles.RoleClaim", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("ClaimType")
                         .HasMaxLength(256);
@@ -180,11 +175,11 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
                     b.Property<DateTime>("CreationTime");
 
-                    b.Property<long?>("CreatorUserId");
+                    b.Property<Guid?>("CreatorUserId");
 
-                    b.Property<int>("RoleId");
+                    b.Property<Guid>("RoleId");
 
-                    b.Property<int?>("TenantId");
+                    b.Property<Guid?>("TenantId");
 
                     b.HasKey("Id");
 
@@ -197,15 +192,14 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
             modelBuilder.Entity("Abp.Authorization.Users.UserAccount", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreationTime");
 
-                    b.Property<long?>("CreatorUserId");
+                    b.Property<Guid?>("CreatorUserId");
 
-                    b.Property<long?>("DeleterUserId");
+                    b.Property<Guid?>("DeleterUserId");
 
                     b.Property<DateTime?>("DeletionTime");
 
@@ -216,11 +210,11 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
                     b.Property<DateTime?>("LastModificationTime");
 
-                    b.Property<long?>("LastModifierUserId");
+                    b.Property<Guid?>("LastModifierUserId");
 
-                    b.Property<int?>("TenantId");
+                    b.Property<Guid?>("TenantId");
 
-                    b.Property<long>("UserId");
+                    b.Property<Guid>("UserId");
 
                     b.Property<long?>("UserLinkId");
 
@@ -244,9 +238,8 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
             modelBuilder.Entity("Abp.Authorization.Users.UserClaim", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("ClaimType")
                         .HasMaxLength(256);
@@ -255,11 +248,11 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
                     b.Property<DateTime>("CreationTime");
 
-                    b.Property<long?>("CreatorUserId");
+                    b.Property<Guid?>("CreatorUserId");
 
-                    b.Property<int?>("TenantId");
+                    b.Property<Guid?>("TenantId");
 
-                    b.Property<long>("UserId");
+                    b.Property<Guid>("UserId");
 
                     b.HasKey("Id");
 
@@ -272,9 +265,8 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
             modelBuilder.Entity("Abp.Authorization.Users.UserLogin", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("LoginProvider")
                         .IsRequired()
@@ -284,9 +276,9 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                         .IsRequired()
                         .HasMaxLength(256);
 
-                    b.Property<int?>("TenantId");
+                    b.Property<Guid?>("TenantId");
 
-                    b.Property<long>("UserId");
+                    b.Property<Guid>("UserId");
 
                     b.HasKey("Id");
 
@@ -301,9 +293,8 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
             modelBuilder.Entity("Abp.Authorization.Users.UserLoginAttempt", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("BrowserInfo")
                         .HasMaxLength(512);
@@ -321,9 +312,9 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                     b.Property<string>("TenancyName")
                         .HasMaxLength(64);
 
-                    b.Property<int?>("TenantId");
+                    b.Property<Guid?>("TenantId");
 
-                    b.Property<long?>("UserId");
+                    b.Property<Guid?>("UserId");
 
                     b.Property<string>("UserNameOrEmailAddress")
                         .HasMaxLength(255);
@@ -339,21 +330,20 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
             modelBuilder.Entity("Abp.Authorization.Users.UserOrganizationUnit", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreationTime");
 
-                    b.Property<long?>("CreatorUserId");
+                    b.Property<Guid?>("CreatorUserId");
 
                     b.Property<bool>("IsDeleted");
 
-                    b.Property<long>("OrganizationUnitId");
+                    b.Property<Guid>("OrganizationUnitId");
 
-                    b.Property<int?>("TenantId");
+                    b.Property<Guid?>("TenantId");
 
-                    b.Property<long>("UserId");
+                    b.Property<Guid>("UserId");
 
                     b.HasKey("Id");
 
@@ -366,19 +356,18 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
             modelBuilder.Entity("Abp.Authorization.Users.UserRole", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreationTime");
 
-                    b.Property<long?>("CreatorUserId");
+                    b.Property<Guid?>("CreatorUserId");
 
-                    b.Property<int>("RoleId");
+                    b.Property<Guid>("RoleId");
 
-                    b.Property<int?>("TenantId");
+                    b.Property<Guid?>("TenantId");
 
-                    b.Property<long>("UserId");
+                    b.Property<Guid>("UserId");
 
                     b.HasKey("Id");
 
@@ -393,9 +382,8 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
             modelBuilder.Entity("Abp.Authorization.Users.UserToken", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime?>("ExpireDate");
 
@@ -405,9 +393,9 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                     b.Property<string>("Name")
                         .HasMaxLength(128);
 
-                    b.Property<int?>("TenantId");
+                    b.Property<Guid?>("TenantId");
 
-                    b.Property<long>("UserId");
+                    b.Property<Guid>("UserId");
 
                     b.Property<string>("Value")
                         .HasMaxLength(512);
@@ -423,13 +411,12 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
             modelBuilder.Entity("Abp.BackgroundJobs.BackgroundJobInfo", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreationTime");
 
-                    b.Property<long?>("CreatorUserId");
+                    b.Property<Guid?>("CreatorUserId");
 
                     b.Property<bool>("IsAbandoned");
 
@@ -458,25 +445,24 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
             modelBuilder.Entity("Abp.Configuration.Setting", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreationTime");
 
-                    b.Property<long?>("CreatorUserId");
+                    b.Property<Guid?>("CreatorUserId");
 
                     b.Property<DateTime?>("LastModificationTime");
 
-                    b.Property<long?>("LastModifierUserId");
+                    b.Property<Guid?>("LastModifierUserId");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(256);
 
-                    b.Property<int?>("TenantId");
+                    b.Property<Guid?>("TenantId");
 
-                    b.Property<long?>("UserId");
+                    b.Property<Guid?>("UserId");
 
                     b.Property<string>("Value")
                         .HasMaxLength(2000);
@@ -493,15 +479,14 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
             modelBuilder.Entity("Abp.EntityHistory.EntityChange", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("ChangeTime");
 
                     b.Property<byte>("ChangeType");
 
-                    b.Property<long>("EntityChangeSetId");
+                    b.Property<Guid>("EntityChangeSetId");
 
                     b.Property<string>("EntityId")
                         .HasMaxLength(48);
@@ -509,7 +494,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                     b.Property<string>("EntityTypeFullName")
                         .HasMaxLength(192);
 
-                    b.Property<int?>("TenantId");
+                    b.Property<Guid?>("TenantId");
 
                     b.HasKey("Id");
 
@@ -522,9 +507,8 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
             modelBuilder.Entity("Abp.EntityHistory.EntityChangeSet", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("BrowserInfo")
                         .HasMaxLength(512);
@@ -539,16 +523,16 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
                     b.Property<string>("ExtensionData");
 
-                    b.Property<int?>("ImpersonatorTenantId");
+                    b.Property<Guid?>("ImpersonatorTenantId");
 
-                    b.Property<long?>("ImpersonatorUserId");
+                    b.Property<Guid?>("ImpersonatorUserId");
 
                     b.Property<string>("Reason")
                         .HasMaxLength(256);
 
-                    b.Property<int?>("TenantId");
+                    b.Property<Guid?>("TenantId");
 
-                    b.Property<long?>("UserId");
+                    b.Property<Guid?>("UserId");
 
                     b.HasKey("Id");
 
@@ -563,11 +547,10 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
             modelBuilder.Entity("Abp.EntityHistory.EntityPropertyChange", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
-                    b.Property<long>("EntityChangeId");
+                    b.Property<Guid>("EntityChangeId");
 
                     b.Property<string>("NewValue")
                         .HasMaxLength(512);
@@ -581,7 +564,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                     b.Property<string>("PropertyTypeFullName")
                         .HasMaxLength(192);
 
-                    b.Property<int?>("TenantId");
+                    b.Property<Guid?>("TenantId");
 
                     b.HasKey("Id");
 
@@ -592,15 +575,14 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
             modelBuilder.Entity("Abp.Localization.ApplicationLanguage", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreationTime");
 
-                    b.Property<long?>("CreatorUserId");
+                    b.Property<Guid?>("CreatorUserId");
 
-                    b.Property<long?>("DeleterUserId");
+                    b.Property<Guid?>("DeleterUserId");
 
                     b.Property<DateTime?>("DeletionTime");
 
@@ -617,13 +599,13 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
                     b.Property<DateTime?>("LastModificationTime");
 
-                    b.Property<long?>("LastModifierUserId");
+                    b.Property<Guid?>("LastModifierUserId");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(10);
 
-                    b.Property<int?>("TenantId");
+                    b.Property<Guid?>("TenantId");
 
                     b.HasKey("Id");
 
@@ -634,13 +616,12 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
             modelBuilder.Entity("Abp.Localization.ApplicationLanguageText", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreationTime");
 
-                    b.Property<long?>("CreatorUserId");
+                    b.Property<Guid?>("CreatorUserId");
 
                     b.Property<string>("Key")
                         .IsRequired()
@@ -652,13 +633,13 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
                     b.Property<DateTime?>("LastModificationTime");
 
-                    b.Property<long?>("LastModifierUserId");
+                    b.Property<Guid?>("LastModifierUserId");
 
                     b.Property<string>("Source")
                         .IsRequired()
                         .HasMaxLength(128);
 
-                    b.Property<int?>("TenantId");
+                    b.Property<Guid?>("TenantId");
 
                     b.Property<string>("Value")
                         .IsRequired()
@@ -678,7 +659,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
                     b.Property<DateTime>("CreationTime");
 
-                    b.Property<long?>("CreatorUserId");
+                    b.Property<Guid?>("CreatorUserId");
 
                     b.Property<string>("Data")
                         .HasMaxLength(1048576);
@@ -722,7 +703,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
                     b.Property<DateTime>("CreationTime");
 
-                    b.Property<long?>("CreatorUserId");
+                    b.Property<Guid?>("CreatorUserId");
 
                     b.Property<string>("EntityId")
                         .HasMaxLength(96);
@@ -736,9 +717,9 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                     b.Property<string>("NotificationName")
                         .HasMaxLength(96);
 
-                    b.Property<int?>("TenantId");
+                    b.Property<Guid?>("TenantId");
 
-                    b.Property<long>("UserId");
+                    b.Property<Guid>("UserId");
 
                     b.HasKey("Id");
 
@@ -756,7 +737,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
                     b.Property<DateTime>("CreationTime");
 
-                    b.Property<long?>("CreatorUserId");
+                    b.Property<Guid?>("CreatorUserId");
 
                     b.Property<string>("Data")
                         .HasMaxLength(1048576);
@@ -779,7 +760,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
                     b.Property<byte>("Severity");
 
-                    b.Property<int?>("TenantId");
+                    b.Property<Guid?>("TenantId");
 
                     b.HasKey("Id");
 
@@ -797,11 +778,11 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
                     b.Property<int>("State");
 
-                    b.Property<int?>("TenantId");
+                    b.Property<Guid?>("TenantId");
 
                     b.Property<Guid>("TenantNotificationId");
 
-                    b.Property<long>("UserId");
+                    b.Property<Guid>("UserId");
 
                     b.HasKey("Id");
 
@@ -812,9 +793,8 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
             modelBuilder.Entity("Abp.Organizations.OrganizationUnit", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -822,9 +802,9 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
                     b.Property<DateTime>("CreationTime");
 
-                    b.Property<long?>("CreatorUserId");
+                    b.Property<Guid?>("CreatorUserId");
 
-                    b.Property<long?>("DeleterUserId");
+                    b.Property<Guid?>("DeleterUserId");
 
                     b.Property<DateTime?>("DeletionTime");
 
@@ -836,11 +816,11 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
                     b.Property<DateTime?>("LastModificationTime");
 
-                    b.Property<long?>("LastModifierUserId");
+                    b.Property<Guid?>("LastModifierUserId");
 
-                    b.Property<long?>("ParentId");
+                    b.Property<Guid?>("ParentId");
 
-                    b.Property<int?>("TenantId");
+                    b.Property<Guid?>("TenantId");
 
                     b.HasKey("Id");
 
@@ -853,21 +833,20 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
             modelBuilder.Entity("Abp.Organizations.OrganizationUnitRole", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreationTime");
 
-                    b.Property<long?>("CreatorUserId");
+                    b.Property<Guid?>("CreatorUserId");
 
                     b.Property<bool>("IsDeleted");
 
-                    b.Property<long>("OrganizationUnitId");
+                    b.Property<Guid>("OrganizationUnitId");
 
-                    b.Property<int>("RoleId");
+                    b.Property<Guid>("RoleId");
 
-                    b.Property<int?>("TenantId");
+                    b.Property<Guid?>("TenantId");
 
                     b.HasKey("Id");
 
@@ -880,9 +859,8 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
             modelBuilder.Entity("AbpCompanyName.AbpProjectName.Authorization.Roles.Role", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -890,9 +868,9 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
                     b.Property<DateTime>("CreationTime");
 
-                    b.Property<long?>("CreatorUserId");
+                    b.Property<Guid?>("CreatorUserId");
 
-                    b.Property<long?>("DeleterUserId");
+                    b.Property<Guid?>("DeleterUserId");
 
                     b.Property<DateTime?>("DeletionTime");
 
@@ -911,7 +889,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
                     b.Property<DateTime?>("LastModificationTime");
 
-                    b.Property<long?>("LastModifierUserId");
+                    b.Property<Guid?>("LastModifierUserId");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -921,7 +899,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                         .IsRequired()
                         .HasMaxLength(32);
 
-                    b.Property<int?>("TenantId");
+                    b.Property<Guid?>("TenantId");
 
                     b.HasKey("Id");
 
@@ -938,9 +916,8 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
             modelBuilder.Entity("AbpCompanyName.AbpProjectName.Authorization.Users.User", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<int>("AccessFailedCount");
 
@@ -953,9 +930,9 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
                     b.Property<DateTime>("CreationTime");
 
-                    b.Property<long?>("CreatorUserId");
+                    b.Property<Guid?>("CreatorUserId");
 
-                    b.Property<long?>("DeleterUserId");
+                    b.Property<Guid?>("DeleterUserId");
 
                     b.Property<DateTime?>("DeletionTime");
 
@@ -980,7 +957,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
                     b.Property<DateTime?>("LastModificationTime");
 
-                    b.Property<long?>("LastModifierUserId");
+                    b.Property<Guid?>("LastModifierUserId");
 
                     b.Property<DateTime?>("LockoutEndDateUtc");
 
@@ -1013,7 +990,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                         .IsRequired()
                         .HasMaxLength(64);
 
-                    b.Property<int?>("TenantId");
+                    b.Property<Guid?>("TenantId");
 
                     b.Property<string>("UserName")
                         .IsRequired()
@@ -1036,22 +1013,21 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
             modelBuilder.Entity("AbpCompanyName.AbpProjectName.MultiTenancy.Tenant", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("ConnectionString")
                         .HasMaxLength(1024);
 
                     b.Property<DateTime>("CreationTime");
 
-                    b.Property<long?>("CreatorUserId");
+                    b.Property<Guid?>("CreatorUserId");
 
-                    b.Property<long?>("DeleterUserId");
+                    b.Property<Guid?>("DeleterUserId");
 
                     b.Property<DateTime?>("DeletionTime");
 
-                    b.Property<int?>("EditionId");
+                    b.Property<Guid?>("EditionId");
 
                     b.Property<bool>("IsActive");
 
@@ -1059,7 +1035,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
 
                     b.Property<DateTime?>("LastModificationTime");
 
-                    b.Property<long?>("LastModifierUserId");
+                    b.Property<Guid?>("LastModifierUserId");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -1088,7 +1064,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                 {
                     b.HasBaseType("Abp.Application.Features.FeatureSetting");
 
-                    b.Property<int>("EditionId");
+                    b.Property<Guid>("EditionId");
 
                     b.HasIndex("EditionId", "Name");
 
@@ -1112,7 +1088,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                 {
                     b.HasBaseType("Abp.Authorization.PermissionSetting");
 
-                    b.Property<int>("RoleId");
+                    b.Property<Guid>("RoleId");
 
                     b.HasIndex("RoleId");
 
@@ -1125,7 +1101,7 @@ namespace AbpCompanyName.AbpProjectName.Migrations
                 {
                     b.HasBaseType("Abp.Authorization.PermissionSetting");
 
-                    b.Property<long>("UserId");
+                    b.Property<Guid>("UserId");
 
                     b.HasIndex("UserId");
 

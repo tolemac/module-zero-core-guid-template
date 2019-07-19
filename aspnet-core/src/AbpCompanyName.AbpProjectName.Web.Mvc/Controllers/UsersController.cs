@@ -7,6 +7,7 @@ using AbpCompanyName.AbpProjectName.Controllers;
 using AbpCompanyName.AbpProjectName.Users;
 using AbpCompanyName.AbpProjectName.Web.Models.Users;
 using AbpCompanyName.AbpProjectName.Users.Dto;
+using System;
 
 namespace AbpCompanyName.AbpProjectName.Web.Controllers
 {
@@ -32,9 +33,9 @@ namespace AbpCompanyName.AbpProjectName.Web.Controllers
             return View(model);
         }
 
-        public async Task<ActionResult> EditUserModal(long userId)
+        public async Task<ActionResult> EditUserModal(Guid userId)
         {
-            var user = await _userAppService.Get(new EntityDto<long>(userId));
+            var user = await _userAppService.Get(new EntityDto(userId));
             var roles = (await _userAppService.GetRoles()).Items;
             var model = new EditUserModalViewModel
             {

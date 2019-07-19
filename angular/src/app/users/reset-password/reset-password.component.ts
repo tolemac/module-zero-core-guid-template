@@ -20,7 +20,7 @@ export class ResetPasswordDialogComponent extends AppComponentBase
     injector: Injector,
     private _userService: UserServiceProxy,
     private _dialogRef: MatDialogRef<ResetPasswordDialogComponent>,
-    @Optional() @Inject(MAT_DIALOG_DATA) private _userId: number
+    @Optional() @Inject(MAT_DIALOG_DATA) private _userId: string
   ) {
     super(injector);
   }

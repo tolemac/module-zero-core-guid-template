@@ -9,15 +9,16 @@ using Abp.MultiTenancy;
 using AbpCompanyName.AbpProjectName.Authorization;
 using AbpCompanyName.AbpProjectName.Authorization.Roles;
 using AbpCompanyName.AbpProjectName.Authorization.Users;
+using System;
 
 namespace AbpCompanyName.AbpProjectName.EntityFrameworkCore.Seed.Tenants
 {
     public class TenantRoleAndUserBuilder
     {
         private readonly AbpProjectNameDbContext _context;
-        private readonly int _tenantId;
+        private readonly Guid _tenantId;
 
-        public TenantRoleAndUserBuilder(AbpProjectNameDbContext context, int tenantId)
+        public TenantRoleAndUserBuilder(AbpProjectNameDbContext context, Guid tenantId)
         {
             _context = context;
             _tenantId = tenantId;

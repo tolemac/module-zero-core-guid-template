@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Application.Services.Dto;
@@ -19,7 +20,7 @@ using Microsoft.AspNetCore.Identity;
 namespace AbpCompanyName.AbpProjectName.MultiTenancy
 {
     [AbpAuthorize(PermissionNames.Pages_Tenants)]
-    public class TenantAppService : AsyncCrudAppService<Tenant, TenantDto, int, PagedTenantResultRequestDto, CreateTenantDto, TenantDto>, ITenantAppService
+    public class TenantAppService : AsyncCrudAppService<Tenant, TenantDto, Guid, PagedTenantResultRequestDto, CreateTenantDto, TenantDto>, ITenantAppService
     {
         private readonly TenantManager _tenantManager;
         private readonly EditionManager _editionManager;
@@ -28,7 +29,7 @@ namespace AbpCompanyName.AbpProjectName.MultiTenancy
         private readonly IAbpZeroDbMigrator _abpZeroDbMigrator;
 
         public TenantAppService(
-            IRepository<Tenant, int> repository,
+            IRepository<Tenant> repository,
             TenantManager tenantManager,
             EditionManager editionManager,
             UserManager userManager,
@@ -106,7 +107,7 @@ namespace AbpCompanyName.AbpProjectName.MultiTenancy
             entity.IsActive = updateInput.IsActive;
         }
 
-        public override async Task Delete(EntityDto<int> input)
+        public override async Task Delete(EntityDto<Guid> input)
         {
             CheckDeletePermission();
 

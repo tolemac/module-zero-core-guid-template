@@ -10,7 +10,7 @@ namespace AbpCompanyName.AbpProjectName.Authorization.Roles
         public RoleStore(
             IUnitOfWorkManager unitOfWorkManager,
             IRepository<Role> roleRepository,
-            IRepository<RolePermissionSetting, long> rolePermissionSettingRepository)
+            IRepository<RolePermissionSetting> rolePermissionSettingRepository)
             : base(
                 unitOfWorkManager,
                 roleRepository,

@@ -30,8 +30,8 @@ namespace AbpCompanyName.AbpProjectName.Authorization.Users
             IPermissionManager permissionManager, 
             IUnitOfWorkManager unitOfWorkManager, 
             ICacheManager cacheManager, 
-            IRepository<OrganizationUnit, long> organizationUnitRepository, 
-            IRepository<UserOrganizationUnit, long> userOrganizationUnitRepository, 
+            IRepository<OrganizationUnit> organizationUnitRepository, 
+            IRepository<UserOrganizationUnit> userOrganizationUnitRepository, 
             IOrganizationUnitSettings organizationUnitSettings, 
             ISettingManager settingManager)
             : base(

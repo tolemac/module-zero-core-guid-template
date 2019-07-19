@@ -14,7 +14,7 @@ namespace AbpCompanyName.AbpProjectName.Authorization.Users
             return Guid.NewGuid().ToString("N").Truncate(16);
         }
 
-        public static User CreateTenantAdminUser(int tenantId, string emailAddress)
+        public static User CreateTenantAdminUser(Guid tenantId, string emailAddress)
         {
             var user = new User
             {
